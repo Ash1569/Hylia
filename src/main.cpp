@@ -1,12 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include "hylia/hylia.h"
-/**
- * #include "hylia/init.h"
- * #include "hylia/cpu/fetch.h"
- * #include "hylia/cpu/decode.h"
- * #include "hylia/cpu/execute.h"
-**/
 
 int isRunning = 1;
 

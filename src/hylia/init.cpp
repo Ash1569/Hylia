@@ -2,7 +2,7 @@
 
 void hInit(uint8_t Ram[1024]) {
 	// Load the file exe.bin into the 1MB Ram Buffer.
-	FILE *f = fopen("exe.bin", "rb");
+	FILE *f = fopen("./bin/exe.bin", "rb");
 	if(f){
 		fseek(f, 0, SEEK_END);
 		size_t file_size = ftell(f);
@@ -11,7 +11,7 @@ void hInit(uint8_t Ram[1024]) {
 		fread(Ram, 1, file_size, f);
 		fclose(f);
 	} else if (f == NULL) {
-        printf("Can't open exe.bin\n");
+        printf("Can't open './bin/exe.bin'\n");
         exit(1);
     }
 }
