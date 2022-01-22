@@ -1,9 +1,12 @@
 #include <iostream>
 #include <fstream>
-#include "hylia/init.h"
-#include "hylia/cpu/fetch.h"
-#include "hylia/cpu/decode.h"
-#include "hylia/cpu/execute.h"
+#include "hylia/hylia.h"
+/**
+ * #include "hylia/init.h"
+ * #include "hylia/cpu/fetch.h"
+ * #include "hylia/cpu/decode.h"
+ * #include "hylia/cpu/execute.h"
+**/
 
 int isRunning = 1;
 
@@ -36,11 +39,12 @@ void showResult() {
 void runHylia() {
 	// While running cycle through 'Fetch Decode Execute' functions  
 	while(isRunning) {
-		int instruction = hFetch(Ram, Registers);
-		hDecode(instruction, &opCode, &reg1, &reg2, &reg3, &immediateValue);
+		int binExec = hFetch(Ram, Registers);
+
+		hDecode(binExec, &opCode, &reg1, &reg2, &reg3, &immediateValue);
 		hExecute(&opCode, &reg1, &reg2, &reg3, &immediateValue, Ram, Registers, &isRunning);
 	}
-	// Output the result of all Registers oexecution halts
+	// Output the result of all Registers on execution halts
 	showResult();
 }
 
