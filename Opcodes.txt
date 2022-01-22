@@ -1,0 +1,40 @@
+0  - Halt
+1  - Add
+2  - Subtract
+3  - Load immediate value in to Reg1
+4  - Load memory address in Reg2 into Reg1
+5  - Move Reg1 to Reg2
+6  - Move Reg1 to memory address in Reg2
+7  - Jump to Reg1 if Reg2 > Reg3
+8  - Jump to Reg1 if Reg2 = Reg3
+9  - Jump to Reg1 if Reg2 != Reg3
+10 - Jump to Reg1
+11 - Jump to Reg1 if Reg2 != zero   - Not Zero
+12 - Jump to Reg1 if Reg2 = zero    - Equal Zero
+13 - Jump to Reg1 if Reg2 > zero    - Greater then Zero
+14 - Jump to Reg1 if Reg2 < zero    - Less then Zero
+
+
+---------------------------------------------------------
+
+r? - Register 0-14
+#  - Immediate Value
+@  - Address
+
+0x00  HALT
+0x01  ADD     r1  r2  r3
+0x02  SUB     r1  r2  r3
+0x03  LOADI   #   r1
+0x04  LOADA   @   r1
+0x05  MOVR    r1  r2
+0x06  MOVA    r1  @
+0x07  JMPG    #   #   #
+0x08  JMPE    #   #   #
+0x09  JMPNE   #   #   #
+0x10  JMP     #   @
+0x11  JMPNZ   #   @
+0x12  JMPEZ   #   @
+0x13  JMPGZ   #   @
+0x14  JMPLZ   #   @
+
+// 13-11-2021 05:49PM AWST  ~Ena
