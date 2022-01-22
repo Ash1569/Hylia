@@ -10,5 +10,8 @@ void hInit(uint8_t Ram[1024]) {
 
 		fread(Ram, 1, file_size, f);
 		fclose(f);
-	}
+	} else if (f == NULL) {
+        printf("Can't open exe.bin\n");
+        exit(1);
+    }
 }
