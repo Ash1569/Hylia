@@ -1,2 +1,11 @@
-all:
-	"g++" ".\src\main.cpp" ".\src\hylia\init.cpp" ".\src\hylia\cpu\fetchdecode.cpp" ".\src\hylia\cpu\execute.cpp" -o ".\bin\hyliaDEV"
+objects := $(patsubst %.cpp,%.o,$(shell find src/ -type f -name '*.cpp'))
+
+all: out/hyliaDEV
+
+clean:
+	rm -f $(objects)
+	rm -rf out/
+
+out/hyliaDEV: $(objects)
+	mkdir -p out/
+	$(CXX) -o $@ $(CPPFLAGS) $(CXXFLAGS) $(objects)
